@@ -1,0 +1,80 @@
+---
+title: "The Psychology of Risky Sexual Decisions: Power Desires, Attachment Style, and Sexual Choices"
+author: "Andrew Ithurburn"
+date: "09/02/2021"
+output:
+  slidy_presentation:
+    css: https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
+    footer: false
+ 
+---
+<style type="text/css">
+div.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+```{r echo=FALSE}
+htmltools::img(src = knitr::image_uri('C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/logo_new.png'), 
+               alt = 'logo', 
+               style = 'position:absolute; top:0; right:0; padding:10px;')
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview
+
+- Literature review
+- Study 1
+-- Methods
+## Background
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Decision-making
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Spitefulness
+
+```{r pressure}
+plot(pressure)
+```
+
+## Experiment 1
+
+
+
+
+
+## Methods
+
+## Measures
+
+
+## Results
+
+
+## Spitefulness
+
+
+## Justification
+
+
+## Bayesian Statistical Results
+
+
+## Study 2
+
+
+
+
