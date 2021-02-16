@@ -11,40 +11,38 @@ output:
     nature:
       highlightLines: true
       countIncrementalSlides: false
-
-
-
+      ratio: '16:9'
 ---
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-	message = FALSE,
-	warning = FALSE,
-	include = FALSE
+
+
+
+``` {r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE
 )
 options(htmltools.dir.version = FALSE)
-df <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/df.csv")
-Vign.df <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/Vign.df.csv")
-Study1 <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/Study1.csv")
-participant_duration <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/participant_duration.csv")
-dt <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/datatable1.csv")
-Vign.means <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/Vign.means.csv")
-vignette.Means <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/Vignette.Means.csv")
-tab_01 <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/tab_01.csv")
-tab_02 <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/tab_02.csv")
-tab_04 <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/tab_04.csv")
-demo_table <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/demo_table.csv")
-Experiment_1 <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/Experiment_1.csv")
-Experiment_1_Names <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/Experiment_1_Names.csv")
+```
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+df <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/df.csv")
+Vign.df <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Vign_df.csv")
+participant_duration <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/participant_duration.csv")
+Vign.means <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Vign_means.csv")
+vignette.Means <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Vignette_Means.csv")
+tab_01 <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/tab_01.csv")
+tab_02 <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/tab_02.csv")
+tab_04 <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/tab_04.csv")
+Experiment_1 <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Experiment_1.csv")
+Experiment_1_Names <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Experiment_1_Names.csv")
 Vignettes_df <-
   read.csv(
-    "C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/Vignettes.csv"
+    "C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Vignettes.csv"
   )
 gender_spite <-
   readRDS(
-    "C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/Gender_Spite.RDS"
+    "C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Gender_Spite.RDS"
   )
 
-Highlighted_Experiment_1 <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Research/PhD/Exploratory_Experiment_1/Highlighted_Experiment_1.csv")
+Highlighted_Experiment_1 <- read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Highlighted_Experiment_1.csv")
 model1 <- readRDS("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/model1.rds")
 ttestresults <- t.test(df$Realism_Sex, df$Realism_NoSex, alternative = "two.sided", var.equal = FALSE)
 
@@ -89,7 +87,7 @@ class: center, top
 ### Study 2
 #### Design
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 ---
 class: inverse, center, middle
@@ -98,7 +96,7 @@ class: inverse, center, middle
 
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 .center[
 # Risky Behaviors
 ]
@@ -120,7 +118,7 @@ class: inverse, center, middle
 
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Examples of risky behaviors
 - Recreational
@@ -143,7 +141,7 @@ class: inverse, center, middle
   - Police reporting
 
 ---
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Effects of risky behaviors
 
@@ -166,7 +164,7 @@ class: inverse, center, middle
 
 
 ---
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Risky sexual behaviors
 
@@ -188,20 +186,20 @@ class: inverse, center, middle
 
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Exploratory Experiment 1
 
 The present exploratory study sought to investigate the interaction between spiteful behavior and level of justification of spiteful acts. Endorsements of spiteful acts tends to suggest the propensity to be more spiteful. Early investigations of spiteful behavior was limited to non-sexual mundane tasks such as going to the grocery store or taking an exam in school. This exploratory study sought to expand the spitefulness literature to include sexual behaviors such as revenge sexual activity and the influence of power differentials. 
 
 .center[
-![](Rplot.png)
+![](C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Rplot.png)
 ]
 
 
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Experiment 1: Participants
 
@@ -212,7 +210,7 @@ The present exploratory study sought to investigate the interaction between spit
 
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Experiment 1: Measures
 
@@ -222,6 +220,7 @@ The present exploratory study sought to investigate the interaction between spit
 
 - Sexuality Self-Esteem Subscale:
   -  SESS; Snell & Papini, 1989
+  
 --  
 
 - Sexual Relationship Power Scale:
@@ -232,7 +231,7 @@ The present exploratory study sought to investigate the interaction between spit
   - SJS; Worley & Samp, 2001
 
 ---
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Experiment 1: Spitefulness
 
@@ -248,15 +247,16 @@ another" <sup>1</sup>
 
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Experiment 1: Spitefulness
 
 - Clustering of participants towards the minimum along with clustering in the mid range of spitefulness scores
 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=6, fig.align="center"}
-ggplot(Experiment_1_Names, aes(x = Age, y = Spite, col = Gender)) +
+```{r echo=FALSE, fig.align="center", fig.height=6, fig.width=10, message=FALSE, warning=FALSE}
+
+ggplot(Experiment_1_Names) + aes(x = Age, y = Spite, col = Gender) +
   geom_point(position = "jitter") +
   geom_smooth(method = "lm") +
   labs(x = "Participant Age", y = "Spitefulness Score", title = "Participant Age vs Spitefulness Score ") +
@@ -267,7 +267,7 @@ ggplot(Experiment_1_Names, aes(x = Age, y = Spite, col = Gender)) +
 ```
 
 ---
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 # Experiment 1: Vignette Example
 
 
@@ -282,11 +282,12 @@ All the vignettes have a common thread of spiteful reactions to certain behavior
 
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Experiment 1: Vignette Realism
 .pull-left[
 ```{r echo=FALSE}
+
 pt <- ggplot(Experiment_1, aes(x = Content, y = Realism, fill = Content, group = Content)) +
   stat_summary(fun = "mean", geom = "bar") + 
   stat_summary(fun.data = mean_se, geom = "errorbar") +
@@ -310,7 +311,7 @@ pt + theme(legend.position = "none")
 
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Experiment 1: Results
 
@@ -318,6 +319,7 @@ pt + theme(legend.position = "none")
 
 .pull-left[
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
+
 ggplot(Experiment_1, aes(x = Vignettes, y = Justification, group = Vignettes, fill = Content)) + 
   geom_segment(y = 1, yend = 5, x = 0.05, xend = 0.05, lwd = 0.5, color = "grey30", lineend = "square") +
   geom_segment(y = 0.8, yend = 0.8, x = 1, xend = 10, 
@@ -343,7 +345,7 @@ ggplot(Experiment_1, aes(x = Vignettes, y = Justification, group = Vignettes, fi
 ]
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Experiment 1: Bayesian Results
 
@@ -355,6 +357,7 @@ tab_model(model1, show.stat = TRUE,
 ]
 .pull-right[
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
+
 modeltesttransformed <- ggs(model1)
 ggplot(filter(modeltesttransformed, Parameter %in% c("b_Intercept", "b_Spite", "b_Content")),
        aes(x   = Iteration,
@@ -374,7 +377,7 @@ ggplot(filter(modeltesttransformed, Parameter %in% c("b_Intercept", "b_Spite", "
 
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Experiment 1: Summary
 
@@ -394,15 +397,15 @@ This first exploratory experiment sought to:
 
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Experiment 2: Design
-
-![](Rplot01.png)
-
+.center[
+<img src="https://sn2files.storage.live.com/y4mwEJtNLiThP5WTL-EcDqRbxIg-2Ar4HqnBUvjkH2Sug2gTiwixeI0ovdkkUdxC67Ja-d8pUdanu0m51bDICOR6-XujW1--6ZLMoMP8dqR7QCulxIj67KCmgS0EbMpD31ta9bJgiG3jaAy0FLgINiO1W8SjM6BeS1Ypyict6Re14HrJrIa0UI7i8qPZKqoiHyI?width=660&height=347&cropmode=none" width="800" height="500" />
+]
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Vignette Change Example:
 
@@ -414,13 +417,13 @@ This first exploratory experiment sought to:
 
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 # Tips for Experiment 2?
 
 ---
 
-<img id = "logo" src="https://sn3302files.storage.live.com/y4mwokubWNx83TK9Dmz0N72_iLqbNBxJdg96GbwJXzo8o5i1WKhR1Cyfc32fw9UzGD20t5AUOjOWDOelG1dfHjVB3umuX9VL_dyNsf5wQ90VjQRAZMw5N41zewG5zXmyitfG3LzMPab7Mfv_AZ-NaGBcIBH1ouVSSs_etxHmmgBJZvrTLboKqXj5oFO3IFshchR?width=256&height=256&cropmode=none" width="80" height="80" />
+<img id = "logo" src="https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none" width="80" height="80" />
 
 
 
