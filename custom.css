@@ -305,3 +305,6 @@ left: 0;
   border-top: 80px solid #FAFAFA;
 }
 
+#headerText {
+  margin: auto;
+}
