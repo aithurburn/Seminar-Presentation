@@ -1,5 +1,5 @@
 ---
-title: "The Psychology of Risky Sexual Decisions: Power Desires, Attachment Style, and Sexual Choices"
+title: "The Psychology of Risk and Power: Power Desires and Sexual Choices"
 subtitle: <img src="https://sn3302files.storage.live.com/y4miRKrDlmvdRbOhmObg6KNTCZVSEdIZX6yny_dPcVm5zfv3n9TUGmobPXIiS_YS24RgniCBKAQGm7AMLL2IDIpbQiBLAjZXSMaJ0KxtlGyl0auB6mCD3-ZmOuplXehffGA8QdY3878ShjxJq4bb0KJok1g3OC9udwl600tqAPxMi1qsPpCQBzs70K1XFsNFppP?width=300&height=45&cropmode=none" width="300" height="45" /><br/>Study 1
 author: "Andrew Ithurburn"
 institute: "University of Edinburgh"
@@ -12,7 +12,9 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: '16:9'
+    
 ---
+
 
 ```{r xaringan-logo, echo=FALSE}
 
@@ -60,6 +62,7 @@ tab_02 <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2
 tab_04 <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/tab_04.csv")
 Experiment_1 <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Experiment_1.csv")
 Experiment_1_Names <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Experiment_1_Names.csv")
+newVignettes <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/newVignettes.csv")
 Vignettes_df <-
   read.csv(
     "C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Vignettes.csv"
@@ -159,7 +162,7 @@ library(ggtext)
 
 - Health/Safety
 
-  - Risky Sexual Behavior <sup>Study 1</sup>
+  - Risky Sexual Behavior <sup>Studies 1 + 2</sup>
 
 --
 
@@ -228,7 +231,7 @@ library(ggtext)
 
 - What influences people to engage in risky behavior
 
-  - Does dominance, prestige, and/or leadership have an effect on risk?
+  - Does dominance, prestige, and/or leadership predict risk?
   
 
 
@@ -258,39 +261,94 @@ The present exploratory study sought to investigate the interaction between spit
   - Male: `r sum(lengths(regmatches(df$Gender, gregexpr("1", df$Gender))))`
   - Female: `r sum(lengths(regmatches(df$Gender, gregexpr("2", df$Gender))))`
   - Gender Non-Binary: `r sum(lengths(regmatches(df$Gender, gregexpr("3", df$Gender))))`
-
-
+  
+  
 ---
-
-
 
 # Experiment 1: Measures
 
-- Spitefulness:
-  - Marcus et al., 2014
---
+## Spitefulness
 
-- Sexuality Self-Esteem Subscale:
-  -  SESS; Snell & Papini, 1989
+--
+.pull-left[
+  - A measure to quantify spiteful behaviors in multiple social domains.
   
---  
+- Contains 17 statements level of agree or disagreement with the actions. 
 
-- Sexual Relationship Power Scale:
-  - SRPS; Pulerwitz, Gortmaker, & DeJong, 2000
---
-
-- Sexual Jealousy Subscale:
-  - SJS; Worley & Samp, 2001
-
+  - "Part of me enjoys seeing the people I do not like fail even if their failure hurts me in some way"
+  ]
+  
+.pull-right[
+![Marcus et al., 2014](files/Screenshots/Marcus.png)
+]
 
 ---
 
+# Experiment 1: Measures
+
+## Sexuality Self-Esteem Subscale
+
+--
+.pull-left[
+- Subset of the sexuality scale measuring self-esteem in the sexual domain. 
+
+- Participants state their agreement or disagreement with statements such as 
+
+  - "I am a good sexual partner"
+]
+.pull-right[
+![SSES](files/Screenshots/snell.png)
+]
+
+---
+
+# Experiment 1: Measures
+
+## Sexual Relationship Power Scale
+
+--
+.pull-left[
+- A 23 item scale measuring the overall power distribution in a sexually active relationship. 
+
+  - Separated into relationship control and decision-making dominance. 
+  
+  - "I feel trapped or stuck in our relationship"
+  
+  - "Who usually has more say about whether you have sex?"
+]
+.pull-right[
+![SRPS](files/Screenshots/Pulerwitz.png)
+]
+---
+
+# Experiment 1: Measures
+
+## Sexual Jealousy Subscale
+
+--
+
+.pull-left[
+- Three-item subset of the 12-item jealousy scale. 
+
+- The 3 included items comprise the sexual component of the survey. 
+
+  - "I would worry about my partner being sexually unfaithful to me"
+]
+.pull-right[
+![SJS](files/Screenshots/worley.png)
+]
+
+---
 
 # Experiment 1: Spitefulness
-
+.pull-left[
 - Spitefulness: 
+
   - "Instances in which people harm themselves to punish
 another" <sup>1</sup>
+
+  - Has been seen in multiple species from chimpanzees to humans. 
+]
 
 .pull-right[
 <img src="https://snz04pap002files.storage.live.com/y4mxlGCwgxvXItqeIu9ELehcrwlPSAZQxJervg55VXxNhxNjsFEmtp1UTIrPxmZCY-UmtrlUTDb4RDxW_9atk0fu3FAoePsAxqQJzoXKnyMO6XTOEQrHk44VvWPWYUbn0pmkPnLX4jytUJMPlIwz3LNQpyHtR3Y8iyu-rbfpe737K_1WoYxGJoNSvtIkTNVG65R?width=1024&height=970&cropmode=none" width="700" height="400" />
@@ -319,6 +377,48 @@ ggplot(Experiment_1_Names) + aes(x = Age, y = Spite, col = Gender) +
   theme_classic(base_size = 12) + 
   theme(axis.ticks.length = unit(7, "pt"))
 ```
+
+
+---
+# Moral Judgement
+
+- An area of psychology bridging philosophical thought and psychology study.
+
+- Separated in deontological and utilitarian judgements
+
+  - Deontological: Moral judgements based on the right or wrong nature of the action based on the letter to the law.
+  
+  - Utilitarian: Moral judgements based on the results of the action being done regardless of the law or the morality of the action. 
+  
+- Moral judgement research often involves using situational dilemmas, most famous being the trolley dilemma. 
+  - There is a runaway trolley barrelling down the railway tracks. Ahead, on the tracks, there are five people tied up and unable to move. The trolley is headed straight for them. You are standing some distance off in the train yard, next to a lever. If you pull this lever, the trolley will switch to a different set of tracks. However, you notice that there is one person on the side track. You have two options:
+
+      1. Do nothing and allow the trolley to kill the five people on the main track.
+      2. Pull the lever, diverting the trolley onto the side track where it will kill one person.
+      
+    - Which is the more ethical option? Or, more simply: What is the right thing to do?
+
+
+---
+# Experiment 1: Dilemmas
+
+- Created a mix of sexual and non-sexual dilemmas
+
+- Sexual vignettes focused around mainly three areas of sexual risk taking behaviors.
+
+  - Condom use
+  
+  - Sexually transmitted infections
+  
+  - Revenge sex
+  
+- Non-sexual vignettes focused around common life events
+  
+  - Grocery shopping
+  
+  - Driving
+  
+  - Child custody
 
 
 ---
@@ -398,24 +498,63 @@ ggplot(Experiment_1, aes(x = Vignettes, y = Justification, group = Vignettes, fi
 
 .pull-right[
 - Participants generally regarded most vignettes as not justified or having low justifiability. 
+
 - As noted with the selection of vignette three in the left figure, most participants believed there was low justifiability with the actions. As evident by the clustering of the violin plot of vignette 3. 
 ]
 
 ---
 
+# Linear regression
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+q <- ggplot(data = Experiment_1, 
+       aes(x   = Spite,
+           y   = Justification,
+           col = as.factor(Content),
+           group = Content))+
+  geom_point(size     = .7,
+             alpha    = .8,
+             position = "jitter") +
+  geom_smooth(method = "lm",
+              se     = FALSE, 
+              size   = 2,
+              alpha  = .8)+
+  theme_classic()+
+  labs(title    = "Linear Relationship for Vignette Content and Observed", 
+       col      = "Vignette Content", caption = "Black points represent vignette 3 levels of justification")
+jz <- q + scale_color_manual (labels = c("Non-Sexual", "Sexual"), values = c("#f8766d", "#00bfc4"), name = "Vignette \nContent")
+       
+jz + geom_point(data = Highlighted_Experiment_1, 
+       aes(x   = Spite,
+           y   = Justification, group = Vignettes), color = 'black', size = 2)
+       
+
+```
+
+- Vignette 3 shows general low justification universally. 
+
+  - Seen as too dark
+
+---
+
+
+---
 
 
 # Experiment 1: Bayesian Results
 
-.pull-left[
-```{r echo=FALSE, fig.height=4, fig.width=4, message=FALSE, warning=FALSE}
+.column-left[
+- Bayes factor for the results only accounts for anecdotal evidence for the alternative hypothesis.
+]
+
+.column-center[
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 tab_model(model1, show.stat = TRUE, 
           CSS = list(css.table = "font-size: 12px;"))
 ```
 ]
-.pull-right[
+.column-right[
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-
 modeltesttransformed <- ggs(model1)
 ggplot(filter(modeltesttransformed, Parameter %in% c("b_Intercept", "b_Spite", "b_Content")),
        aes(x   = Iteration,
@@ -429,11 +568,8 @@ ggplot(filter(modeltesttransformed, Parameter %in% c("b_Intercept", "b_Spite", "
   labs(title = "Caterpillar Plots", 
        col   = "Chains") + 
   theme_classic(base_size = 12)
-  
 ```
 ]
-
-
 
 ---
 
@@ -449,55 +585,65 @@ This first exploratory experiment sought to:
   
 - Act as a foundation for future experiments and future viability. 
 
---
-
-- Create a foundational step for future investigations in
+  - Further investigation of power desires
   
-  - Connection of power, attachment style, etc...
+  - Future investigation of influence of image manipulation
+      
+      - Visual stimuli
 
 
 
 ---
 
 # Experiment 2: Design
-.center[
+
 .center[
 <img src="https://snz04pap002files.storage.live.com/y4mwEJtNLiThP5WTL-EcDqRbxIg-2Ar4HqnBUvjkH2Sug2gTiwixeI0ovdkkUdxC67Ja-d8pUdanu0m51bDICOR6-XujW1--6ZLMoMP8dqR7QCulxIj67KCmgS0EbMpD31ta9bJgiG3jaAy0FLgINiO1W8SjM6BeS1Ypyict6Re14HrJrIa0UI7i8qPZKqoiHyI?width=1419&height=745&cropmode=none" width="1419" height="550" />
 ]
-]
+
 ---
 
 
 
 # Vignette Change Example:
 
-```{r}
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+newVignettes[] <- lapply(newVignettes, gsub, pattern = 'Â', replacement = " ")
+kable(newVignettes,"html", col.names = c("Vignette Number", "Base Text", "Dominance", "Leadership", "Prestige"), booktabs = TRUE) %>%
+  kableExtra::kable_styling(font_size = 13, full_width = FALSE)
+
 
 ```
 
+- There were a number of changes that I did with the styles of the vignettes:
 
-
+  - Randomizing the base text of the vignettes
+  
+  - Randomizing the ending conflict "resolution" based on three outcomes based in power desire research 
+      
+      - Dominance, prestige, or leadership
+  
+  - Focusing just on sexual risk decisions
+      
+      - Future studies branching out into multiple risk domains
+      
 ---
 
+# Experiment 2
 
+- In future studies I want to expand out from sexual risk to other domains such as recreational risk and so forth.
 
-# Tips for Experiment 2?
+- Investigating the influence of visual and audio manipulation and its influence on power desires and risk. 
 
-
-
----
-
-
-
-
-
+  - https://webmorph.org/
 
 
 ---
 
 class: title-slide
-
-<h1> The Psychology of Risky Sexual Decisions: Power Desires, Attachment Style, and Sexual Choices </h1>
+<br>
+<br>
+<h1> The Psychology of Risk and Power: Power Desires and Sexual Choices </h1>
 <img src="https://sn3302files.storage.live.com/y4miRKrDlmvdRbOhmObg6KNTCZVSEdIZX6yny_dPcVm5zfv3n9TUGmobPXIiS_YS24RgniCBKAQGm7AMLL2IDIpbQiBLAjZXSMaJ0KxtlGyl0auB6mCD3-ZmOuplXehffGA8QdY3878ShjxJq4bb0KJok1g3OC9udwl600tqAPxMi1qsPpCQBzs70K1XFsNFppP?width=300&height=45&cropmode=none" width="300" height="45" /img> 
 <br></br>
 <h2>Study 1</h2> 
