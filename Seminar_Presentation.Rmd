@@ -118,33 +118,31 @@ library(ggtext)
 #### Design
 
 
-
-
 ---
 
-
-
-
-# Risky Behaviors
-
-- 376 million new cases of the four curable sexually transmitted infections <sup>1</sup>
-
-  - Chlamydia
-  - Gonorrhea
-  - Trichomoniasis
-  - Syphilis*
+# Examples of risky behaviors
+- Recreational
   
---
-
-- Becomes problematic with antibiotic resistant bacteria such as certain strains of gonorrhea <sup>2</sup>
-
-.footnote[1: WHO, 2016
-<br>2: Costa-Lourenço et al., 2017; Ohnishi et al., 2011]
-
-
-
+  - Skydiving
+  
+  .pull-right[
+  ![](https://files.list.co.uk/images/2009/09/10/skydive.jpg)
+  ]
 ---
 
+# Examples of risky behaviors
+- Recreational
+  
+  - Skydiving
+  
+- Financial
+  
+  - Gambling
+  .pull-right[
+  ![](https://images.theconversation.com/files/210093/original/file-20180313-30994-1d202l8.jpg?ixlib=rb-1.1.0&rect=0%2C152%2C1000%2C499&q=45&auto=format&w=1356&h=668&fit=crop)
+]
+
+---
 
 
 # Examples of risky behaviors
@@ -152,28 +150,106 @@ library(ggtext)
   
   - Skydiving
 
---
-
 - Financial
   
   - Gambling
-
---
+  
 
 - Health/Safety
 
   - Risky Sexual Behavior <sup>Studies 1 + 2</sup>
 
---
+---
+
+# Examples of risky behaviors
+- Recreational
+  
+  - Skydiving
+
+- Financial
+  
+  - Gambling
+  
+
+- Health/Safety
+
+  - Risky Sexual Behavior <sup>Studies 1 + 2</sup>
+
 
 - Social
 
   - Strict honesty
---
+  
+---
 
+# Examples of risky behaviors
+- Recreational
+  
+  - Skydiving
+  
+- Recreational
+  
+  - Skydiving
+  
+- Financial
+  
+  - Gambling
+  
+
+- Health/Safety
+
+  - Risky Sexual Behavior <sup>Studies 1 + 2</sup>
+
+---
+
+# Examples of risky behaviors
+- Recreational
+  
+  - Skydiving
+
+- Financial
+  
+  - Gambling
+  
+- Health/Safety
+
+  - Risky Sexual Behavior <sup>Studies 1 + 2</sup>
+
+
+- Social
+
+  - Strict honesty
+  
+  
 - Ethical
 
   - Police reporting
+
+
+---
+
+# Risky Behaviors: Sexually trasnmitted infections
+.column-left2[
+- 376 million new cases of the four curable sexually transmitted infections <sup>1</sup>
+
+  - Chlamydia
+  - Gonorrhea
+  - Trichomoniasis
+  - Syphilis*
+
+- Becomes problematic with antibiotic resistant bacteria such as certain strains of gonorrhea <sup>2</sup>
+]
+
+--
+
+.column-right2[
+![](https://sn3302files.storage.live.com/y4mGLP-1VroAwsNz8j7ci84gwB7USfh2aRXoMwPiIpFqc09yfIx6vUUlLSk2jQ082Yk2Y95li7RcjDzt-EgHqhVMSwpArsvAzZ5ngnYDOKV6XrY07Ox9xfnaFkaRqvvrufKQHhkNvxAQUklKdDtvCfwv9pjpSibxPnFXKxiA_Vnv4s9cbewz-C0J1779TB_iXZi?width=663&height=411&cropmode=none)
+]
+
+.footnote[1: WHO, 2016
+<br>2: Costa-Lourenço et al., 2017; Ohnishi et al., 2011]
+
+<img id = "logo" src="https://sn3302files.storage.live.com/y4mb3mhpInimOh3P_tlg90ryoRk4dMndgdKCQFrnBRbhMi13F1-1kqkipC5emMdSzShTJn4VkvO-Ybzolj3KmjvsCC9gQmWzFbLkiFk3GL9wQh9MnDja2M6DW0uQUzitCvMBdpFBh22nBUqZBgJIeUPqPbwXs6xluKZkY_Awn5Yxgh8in1SWH-EuHu4iUJzHwQ6?width=1024&height=1024&cropmode=none" width="80" height="80" />
 
 
 ---
@@ -233,7 +309,9 @@ library(ggtext)
 
   - Does dominance, prestige, and/or leadership predict risk?
   
+--
 
+- Does attachment style buffering affect the power desires of others?
 
 
 
@@ -261,8 +339,10 @@ The present exploratory study sought to investigate the interaction between spit
   - Male: `r sum(lengths(regmatches(df$Gender, gregexpr("1", df$Gender))))`
   - Female: `r sum(lengths(regmatches(df$Gender, gregexpr("2", df$Gender))))`
   - Gender Non-Binary: `r sum(lengths(regmatches(df$Gender, gregexpr("3", df$Gender))))`
-  
-  
+
+- Majority of participants identified as white, European, and had a university undergraduate degree
+
+
 ---
 
 # Experiment 1: Measures
@@ -348,6 +428,7 @@ The present exploratory study sought to investigate the interaction between spit
 another" <sup>1</sup>
 
   - Has been seen in multiple species from chimpanzees to humans. 
+  
 ]
 
 .pull-right[
@@ -356,10 +437,23 @@ another" <sup>1</sup>
 
 .footnote[1: Critchfield, Levy, Clarkin, & Kernberg, 2008]
 
-
 ---
 
+# Spitefulness: Comparisons
+.column-left2[
+- As expected, spitefulness endorsement follows a normal bell shaped curve with a majority of participants scores being midrange. 
+]
+.column-right2[
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+ggplot(Study1, aes(x=Spite.Score)) +
+  geom_histogram(fill = "#fc8d59", color = "black") + labs(x = "Spitefulness Score") +
+  scale_x_continuous(limits = c(10, 60), breaks = seq(10, 60, 10)) + 
+  theme_classic(base_size = 12) + 
+  theme(axis.ticks.length = unit(7,"pt"))
+```
+]
 
+---
 
 # Experiment 1: Spitefulness
 
@@ -431,7 +525,7 @@ kable(Vignettes_df[1, 'Vign.8'], col.names = NULL)
 
 ```
 
-All the vignettes have a common thread of spiteful reactions to certain behavior patterns and causes. However, some like the above, are devoid of sexual activity and are therefore a representation of the other four vignettes that are non-sexual. The above average justification score was `r sprintf(mean(Vign.df$Vign_8), fmt='%#.2f')` 
+- All the vignettes have a common thread of spiteful reactions to certain behavior patterns and causes. However, some like the above, are devoid of sexual activity and are therefore a representation of the other four vignettes that are non-sexual. The above average justification score was `r sprintf(mean(Vign.df$Vign_8), fmt='%#.2f')` 
 </div>
 <div style = "position: fixed; bottom: 0; left: 0;">
 
@@ -468,8 +562,6 @@ pt + theme(legend.position = "none")
 
 ---
 
-
-
 # Experiment 1: Results
 
 ### Vignette Justification: Violin Plot
@@ -505,7 +597,7 @@ ggplot(Experiment_1, aes(x = Vignettes, y = Justification, group = Vignettes, fi
 ---
 
 # Linear regression
-
+.pull-left[
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 q <- ggplot(data = Experiment_1, 
        aes(x   = Spite,
@@ -530,13 +622,33 @@ jz + geom_point(data = Highlighted_Experiment_1,
        
 
 ```
-
+]
+.pull-right[
 - Vignette 3 shows general low justification universally. 
 
   - Seen as too dark
+  
+```{r echo=FALSE, message=FALSE, warning=FALSE, results="asis"}
+tab_01[, "X"] <- NULL
+kable(tab_01, format = "html", booktabs = TRUE, escape = FALSE, longtable = TRUE,
+      col.names = c("Vignette", "$M$", "$SD$"),
+      align = c("l", "c", "c"), digits = c(2, 2, 2),
+      caption = "Descriptive Statistics for Vignette Justifications")%>%
+  kable_styling(full_width = FALSE, font_size = 8, position = "float_left") %>%
+  row_spec(row = 0, align = "c", font_size = 9) %>%
+  column_spec(column = .5, width = "1in")
+tab_02[, "X"] <- NULL
+kable(tab_02, format = "html", booktabs = TRUE, escape = F, longtable = T, 
+      col.names = c("Vignette \nContent", "$M$", "$SD$"),
+      align = c("l", "c", "c"), digits = c(NA, 2, 2),
+      caption = "Descriptive Statistics For Overall Vignette Justification Grouped by Content") %>%
+  kable_styling(full_width = F, font_size = 8, position = "left")%>%
+  row_spec(row = 0, align = "c", font_size = 9)%>%
+  column_spec(column = .5, width = "1in")
 
----
 
+```
+]
 
 ---
 
@@ -611,7 +723,6 @@ This first exploratory experiment sought to:
 newVignettes[] <- lapply(newVignettes, gsub, pattern = 'Â', replacement = " ")
 kable(newVignettes,"html", col.names = c("Vignette Number", "Base Text", "Dominance", "Leadership", "Prestige"), booktabs = TRUE) %>%
   kableExtra::kable_styling(font_size = 13, full_width = FALSE)
-
 
 ```
 

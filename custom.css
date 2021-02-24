@@ -312,3 +312,5 @@ left: 0;
 .column-left{ float: left; width: 20%; }
 .column-right{ float: right; width: 50%; }
 .column-center{ display: inline-block; width: 30%; }
+.column-left2{ float: left; width: 50%; }
+.column-right2{ float: right; width: 50%;}
