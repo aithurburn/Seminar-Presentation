@@ -47,6 +47,10 @@ xaringanExtra::use_logo(
   image_url = "https://sn3302files.storage.live.com/y4m1C8R68FO1Cw-aIb1H9KOI2Yp-ayRQNTIQdZXc1F0h-VXMPr9xLkEruNdBoJHdB_nuUAKwfcT81SFJD__efRWf8mKGifzniFGaKdm2ZacSXDnpNO8xVm_TfJYxAsOzbQ8Hnr6N8FtUsO3L59MNUdqbBCE2L_1UmE2_rCo-kyQcqPJDs9VD2FAqE-Q0jh0RUAw?width=256&height=256&cropmode=none", width = "80px", height = "80px", position = css_position(top = 0, right = 0))
 ```
 
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
 ```{r xarigan-fit-screen, echo=FALSE, include = FALSE}
 xaringanExtra::use_fit_screen()
 ```
@@ -66,6 +70,10 @@ newVignettes <-  read.csv("C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Sp
 Vignettes_df <-
   read.csv(
     "C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Vignettes.csv"
+  )
+Study1 <-
+  read.csv(
+    "C:/Users/s1932788/OneDrive/Documents/1_UoE/Seminar/Spring 2021/Social Psychology Seminar Presentation/files/Study1.csv"
   )
 gender_spite <-
   readRDS(
@@ -108,18 +116,57 @@ library(ggtext)
 
 
 # Overview
-
-### Literature review
+.pull-left[
+### Background
 ### Study 1
 #### Methods
 #### Results
 #### Bayesian Statistical Results change
 ### Study 2
 #### Design
+]
+.pull-right[
+![](https://www.cgma.org/content/dam/cgma/resources/tools/publishingimages/business-anayltics-briefing-819x400.jpg)
+]
+---
 
+# Decision-making
+
+- Decision-making is often extremely difficult to conduct and develop a complete understanding of the events going into making a decision
+
+- Many factors go into how a decision is made
+
+  - Prior knowledge
+  
+  - Cultural significance
+  
+  - Moral evaluations*
+  
+  - Psychology drives/desires
+  
+  - Physical, psychological, and emotional consequences
 
 ---
 
+# Decision-making factors
+
+- Emotional valence of a decision is often an important factor in the decision being made
+
+- The degree of emotional valence factors into how quick the decision will be made
+
+  - Often, individuals will focus more on the emotional opinions of the decision regardless of the factual evidence or lack there of of the decision
+  
+      - Political held beliefs <sup>1</sup>
+      
+      - Cultural beliefs
+      
+          - Religious beliefs
+      
+.footnote[
+1: Marcus, 2000
+]
+
+---
 # Examples of risky behaviors
 .pull-left[
 - Recreational
@@ -307,6 +354,53 @@ library(ggtext)
 ![](https://www.eurekalert.org/multimedia/pub/web/251698_web.jpg)
 ]
 
+---
+
+# Power desires
+
+- Power
+
+  - Investigations in decisions would be remiss without discussions of power and power desires
+  
+  - Dominance
+      
+      -  Wanting deference by coercive or aggressive means
+  
+  - Prestige
+  
+      - Wanting to receive deference by obtain admiration and respect of others
+  
+  - Leadership
+  
+      - Receiving deference from a group for purposes important to he wellbeing of the group 
+
+---
+
+# Experiment 1: Spitefulness
+.pull-left[
+- Spitefulness: 
+
+  - "Instances in which people harm themselves to punish
+another" <sup>1</sup>
+
+  - Has been seen in multiple species from chimpanzees to humans. 
+  
+  - Related to the dark triad of 
+      
+      - Machiavellianism
+      
+      - Psychopathy
+      
+      - Narcissism 
+  
+]
+
+.pull-right[
+<img src="https://snz04pap002files.storage.live.com/y4mxlGCwgxvXItqeIu9ELehcrwlPSAZQxJervg55VXxNhxNjsFEmtp1UTIrPxmZCY-UmtrlUTDb4RDxW_9atk0fu3FAoePsAxqQJzoXKnyMO6XTOEQrHk44VvWPWYUbn0pmkPnLX4jytUJMPlIwz3LNQpyHtR3Y8iyu-rbfpe737K_1WoYxGJoNSvtIkTNVG65R?width=1024&height=970&cropmode=none" width="700" height="400" />
+]
+
+.footnote[1: Critchfield, Levy, Clarkin, & Kernberg, 2008]
+
 
 ---
 
@@ -371,8 +465,13 @@ The present exploratory study sought to investigate the interaction between spit
   - Male: `r sum(lengths(regmatches(df$Gender, gregexpr("1", df$Gender))))`
   - Female: `r sum(lengths(regmatches(df$Gender, gregexpr("2", df$Gender))))`
   - Gender Non-Binary: `r sum(lengths(regmatches(df$Gender, gregexpr("3", df$Gender))))`
+  
+- Participants took an average `r sprintf((participant_duration[1,]))`. 
+- The average age of participants was right skewed with an average age of `r sprintf(mean(Study1$Age), fmt = '%#.2f')`. 
 
-- Majority of participants identified as white, European, and had a university undergraduate degree
+- There was also an over-representation of white individuals as well. On average participants had a University Undergraduate Degree or an A-levels or equivalent qualification. A majority of participants identified as being European as well. 
+
+
 
 
 ---
@@ -393,6 +492,7 @@ The present exploratory study sought to investigate the interaction between spit
 .pull-right[
 ![Marcus et al., 2014](files/Screenshots/Marcus.png)
 ]
+
 
 ---
 
@@ -450,30 +550,15 @@ The present exploratory study sought to investigate the interaction between spit
 ![SJS](files/Screenshots/worley.png)
 ]
 
----
 
-# Experiment 1: Spitefulness
-.pull-left[
-- Spitefulness: 
-
-  - "Instances in which people harm themselves to punish
-another" <sup>1</sup>
-
-  - Has been seen in multiple species from chimpanzees to humans. 
-  
-]
-
-.pull-right[
-<img src="https://snz04pap002files.storage.live.com/y4mxlGCwgxvXItqeIu9ELehcrwlPSAZQxJervg55VXxNhxNjsFEmtp1UTIrPxmZCY-UmtrlUTDb4RDxW_9atk0fu3FAoePsAxqQJzoXKnyMO6XTOEQrHk44VvWPWYUbn0pmkPnLX4jytUJMPlIwz3LNQpyHtR3Y8iyu-rbfpe737K_1WoYxGJoNSvtIkTNVG65R?width=1024&height=970&cropmode=none" width="700" height="400" />
-]
-
-.footnote[1: Critchfield, Levy, Clarkin, & Kernberg, 2008]
 
 ---
 
 # Spitefulness: Comparisons
+.panelset[
+.panel[.panel-name[Spitefulness]
 .column-left2[
-- As expected, spitefulness endorsement follows a normal bell shaped curve with a majority of participants scores being midrange. 
+- As expected, spitefulness endorsement follows a normal bell shaped curve with a majority of participants scores being mid-range. 
 ]
 .column-right2[
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -484,15 +569,30 @@ ggplot(Study1, aes(x=Spite.Score)) +
   theme(axis.ticks.length = unit(7,"pt"))
 ```
 ]
-
----
-
-# Experiment 1: Spitefulness
-
-- Clustering of participants towards the minimum along with clustering in the mid range of spitefulness scores
-
-
-```{r echo=FALSE, fig.align="center", fig.height=6, fig.width=10, message=FALSE, warning=FALSE}
+]
+.panel[.panel-name[Spitefulness Facetted by Gender]
+.column-left2[
+- No significant interaction of participants and spitefulness score 
+]
+.column-right2[
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.align="right"}
+ggplot(Study1, aes(x=Spite.Score, fill = Gender)) +
+  geom_histogram(color = "black") + 
+  gghighlight() + 
+  facet_wrap(~Gender) +
+  labs(x = "Spitefulness Score", title = "Participants Spitefulness Score Facetted by Gender") +
+  scale_x_continuous(limits = c(10, 60), breaks = seq(10, 60, 10)) + 
+  theme_classic(base_size = 12) + 
+  theme(axis.ticks.length = unit(7,"pt"))
+```
+]
+]
+.panel[.panel-name[Spitefulness and Age]
+.column-left2[
+- No significant interaction of participants and spitefulness score 
+]
+.column-right2[
+```{r echo=FALSE, fig.align="right", fig.height=6, fig.width=10, message=FALSE, warning=FALSE}
 
 ggplot(Experiment_1_Names) + aes(x = Age, y = Spite, col = Gender) +
   geom_point(position = "jitter") +
@@ -503,7 +603,9 @@ ggplot(Experiment_1_Names) + aes(x = Age, y = Spite, col = Gender) +
   theme_classic(base_size = 12) + 
   theme(axis.ticks.length = unit(7, "pt"))
 ```
-
+]
+]
+]
 
 ---
 # Moral Judgement
